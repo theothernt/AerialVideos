@@ -10,7 +10,7 @@ import json
 
 tvOsReleaseJSON = []
 
-min_os = 10
+min_os = 13
 max_os = 13
 
 for os_number in range(max_os, min_os-1,-1):
@@ -144,7 +144,7 @@ def get_thumbnail(vid_id, url):
 
     
 # Enable this to grab and output thumbnails (to the thumbnails directory) but takes a while
-generate_thumbnails = False;
+generate_thumbnails = True;
 
 if generate_thumbnails:
     for asset in parsed_assets:
