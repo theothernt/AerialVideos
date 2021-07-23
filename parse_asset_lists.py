@@ -158,8 +158,8 @@ if generate_thumbnails:
         elif "url-1080-H264" in asset:
             url = asset["url-1080-H264"]
 
-        elif "url-1080-HDR" in asset:
-            url = asset["url-1080-HDR"]
+        #elif "url-1080-HDR" in asset:
+        #    url = asset["url-1080-HDR"]
 
         elif "url-4K-SDR" in asset:
             url = asset["url-4K-SDR"]
@@ -176,8 +176,8 @@ if generate_thumbnails:
 
 markdown_output = []
 
-markdown_output.append("# Aerial wallpapers   ")
-markdown_output.append("Amazing footage from AppleTV default wallpapers. Mostly drone footage of various cities. Features some satellite footage and underwater footage too! Built from https://github.com/Tawfiqh/aerialWallpapers  ")
+markdown_output.append("# Aerial Videos")
+# markdown_output.append("Amazing footage from AppleTV default wallpapers. Mostly drone footage of various cities. Features some satellite footage and underwater footage too!")
 
 markdown_output.append('<div class="asset_container" markdown="1">  ')
 markdown_output.append("  ")
@@ -197,35 +197,34 @@ for asset in parsed_assets:
     markdown_output.append('<div class="button_container" markdown="1">  ')
     markdown_output.append("  ")
 
-    if "url" in asset:
-        new_line = "[🎬 Watch ](" + asset['url'] +")   "
-        markdown_output.append(new_line)
+    #if "url" in asset:
+    #    new_line = "[🎬 Watch ](" + asset['url'] +")   "
+    #    markdown_output.append(new_line)
 
     if "url-1080-SDR" in asset:
-        new_line = "[🎬 Watch 1080p](" + asset['url-1080-SDR'] +")   "
+        new_line = "[🎬 Watch 1080p SDR](" + asset['url-1080-SDR'] +")   "
         markdown_output.append(new_line)
 
 
     if "url-4K-SDR" in asset:
-        new_line = "[🎬 Watch *4K* ](" + asset['url-4K-SDR'] +")   "
+        new_line = "[🎬 Watch *4K* SDR](" + asset['url-4K-SDR'] +")   "
         markdown_output.append(new_line)
 
-    if "url-1080-H264" in asset:
-        new_line = "[🎬 Watch 1080p-H264 ](" + asset['url-1080-H264'] +")   "
-        markdown_output.append(new_line)
-
+    #if "url-1080-H264" in asset:
+    #   new_line = "[🎬 Watch 1080p-H264 ](" + asset['url-1080-H264'] +")   "
+    #   markdown_output.append(new_line)
 
     if "url-1080-HDR" in asset or "url-4K-HDR" in asset:
-        markdown_output.append(" ")
-        markdown_output.append("#### HDR")
+        #markdown_output.append(" ")
+        #markdown_output.append("#### HDR")
         if "url-1080-HDR" in asset:
-            new_line = "[🎬 Watch 1080-HDR ](" + asset['url-1080-HDR'] +")   "
+            new_line = "[🎬 Watch 1080p HDR](" + asset['url-1080-HDR'] +")   "
             markdown_output.append(new_line)
-
 
         if "url-4K-HDR" in asset:
-            new_line = "[🎬 Watch 4K-HDR ](" + asset['url-4K-HDR'] +")   "
+            new_line = "[🎬 Watch 4K HDR](" + asset['url-4K-HDR'] +")   "
             markdown_output.append(new_line)
+
     markdown_output.append("</div>  ")
 
     markdown_output.append("  ")
