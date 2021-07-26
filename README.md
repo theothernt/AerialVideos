@@ -1,36 +1,36 @@
-# Aerial wallpapers   
+# Aerial Videos
 
-Amazing footage from Apple, mostly drone footage of various cities. Also satellite footage and underwater footage!
+This is a fork of the [Aerial Wallpapers](https://github.com/Tawfiqh/aerialWallpapers) repo which lists all the aerial videos available from Apple.
 
-Built off of https://github.com/JohnCoates/Aerial  
-Similar list available here: https://bzamayo.com/watch-all-the-apple-tv-aerial-video-screensavers
+I've made a few changes to support [the Android TV screensaver I maintain](https://github.com/theothernt/AerialDream)...
 
-This repo contains 3 main parts:
-
-1. Python notebook to create "output_parsed_file_list.json" and scrape thumbnails.
-2. index.html which is a static html page showing all the thumbnails and linking to the videos. Inefficient  as it loads all the thumbnails on-load.
-3. gatsby/ folder - a [gatsby](http://gatsbyjs.org) site - the same as index.html but loads images more efficiently.
-
+1. The generated site only lists tvOS 13 videos as they are the latest version of all the videos
+2. Removed unneeded Gatsby site and some other clutter
 
 # Building it
-The final result is available here: https://aerial-screensavers.netlify.com a deployed version of the gatsby site.
 
-You can and run build it yourself with
+Built it with the following command
 ```sh
-./run.sh;
+./run.sh
+```
+
+The view the output
+```sh
 open index.html
 ```
 
 Requires:
+- FFMPEG (for thumbnail generation)
 - python3
 - cmark
 
+(tested on macOS only)
+
+# How it works
 `run.sh` first calls `download_resources.sh` that uses curl to fetch the JSON lists of URLs.
 _These were pulled from_
 
 `parse_asset_lists.py` then parses this list.
-
-It has a setting inside to also download thumbnails.
 
 It then outputs a markdown/html file of all of the files, titles, URLs, link to thumbnails.
 
