@@ -5,6 +5,7 @@
 
 
 import json
+import os
 
 # Read the JSON files into an array so we can iterate over them
 
@@ -147,6 +148,10 @@ def get_thumbnail(vid_id, url):
 generate_thumbnails = True;
 
 if generate_thumbnails:
+    directory = "thumbnails"
+    if not os.path.exists(directory):
+        os.makedirs(directory)
+
     for asset in parsed_assets:
         url = ""
         if "url" in asset:
