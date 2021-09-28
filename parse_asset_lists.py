@@ -11,8 +11,8 @@ import os
 
 tvOsReleaseJSON = []
 
-min_os = 13
-max_os = 13
+min_os = 15
+max_os = 15
 
 for os_number in range(max_os, min_os-1,-1):
     print('tvos',os_number)
@@ -191,7 +191,7 @@ for asset in parsed_assets:
     markdown_output.append('<div class="asset" markdown="1">  ')
     markdown_output.append("  ")
     
-    new_line = "## " + asset['accessibilityLabel'] + " _("+ asset['id'] +")_"
+    new_line = "## " + asset['accessibilityLabel'] # + " _("+ asset['id'] +")_"
     markdown_output.append(new_line)
     
     # ![Alt text](/path/to/img.jpg "Optional title")
