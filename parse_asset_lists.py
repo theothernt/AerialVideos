@@ -180,6 +180,7 @@ if generate_thumbnails:
 
 
 markdown_output = []
+parsed_assets.reverse()
 
 markdown_output.append("# Aerial Videos")
 # markdown_output.append("Amazing footage from AppleTV default wallpapers. Mostly drone footage of various cities. Features some satellite footage and underwater footage too!")
