@@ -2,9 +2,9 @@
 
 This is a fork of the [Aerial Wallpapers](https://github.com/Tawfiqh/aerialWallpapers) repo which lists all the aerial videos available from Apple.
 
-I've made a few changes to support [the Android TV screensaver I maintain](https://github.com/theothernt/AerialDream)...
+I've made a few changes to support [the Android TV screensaver I maintain](https://github.com/theothernt/AerialViews)...
 
-1. The generated site only lists tvOS 13 videos as they are the latest version of all the videos
+1. The generated site only lists tvOS 15 (only) videos as they are the latest version of all the videos
 2. Removed unneeded Gatsby site and some other clutter
 
 # Building it
