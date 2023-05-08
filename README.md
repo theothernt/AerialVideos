@@ -4,6 +4,8 @@ This project generates a simple website which lists all the videos from Apple, J
 
 You can then download the videos you like for use in the screensaver of your choice - such as [Aerial Views for Android TV](https://github.com/theothernt/AerialViews).
 
+This website is built and deployed using Netlify and can be viewed at [https://aerial-videos.netlify.app/](https://aerial-videos.netlify.app/)
+
 ## Generate the video thumbnails
 
 Requires:
