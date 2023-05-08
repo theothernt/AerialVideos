@@ -19,7 +19,7 @@ def generate_thumbnails(filename):
     
 def render_image(video):
     clip = VideoFileClip(video['url-1080-H264'])
-    clip.fx(resize, width=425).save_frame(f"{THUMBNAILS_PATH}/{video['id']}.webp", t=5)
+    clip.fx(resize, width=320).save_frame(f"{THUMBNAILS_PATH}/{video['id']}.webp", t=5)
     clip.close()
     print("Thumbnail created for: " + video['accessibilityLabel'])
 

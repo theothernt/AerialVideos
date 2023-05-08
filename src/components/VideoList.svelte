@@ -12,8 +12,8 @@
         {#each assets as item, index}
         <div class="card variant-soft w-80 overflow-hidden rounded-lg mr-5 mb-5">
             <header>
-                <Lazy height={180} fadeOption={{delay: 100, duration: 700}}>
-                    <img src="thumbnails/{item.id}.webp" class="bg-black/50 w-full" alt="{item.accessibilityLabel}" />
+                <Lazy height={180} fadeOption={{delay: 0, duration: 700}}>
+                    <img width="320" height="180" src="thumbnails/{item.id}.webp" class="bg-black/50 w-full" alt="{item.accessibilityLabel}" />
                 </Lazy>
             </header>
             <div class="p-4 space-y-4">

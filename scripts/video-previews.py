@@ -25,7 +25,7 @@ def render_video(video):
     end_time = 15
     clip = VideoFileClip(video['url-1080-H264'])
     short_clip = clip.subclip(start_time, end_time)
-    resized_clip = short_clip.fx(resize, width=425)
+    resized_clip = short_clip.fx(resize, width=320)
     resized_clip.write_videofile(f"{PREVIEWS_PATH}/{video['id']}.webm", codec='libvpx', preset='veryslow', write_logfile=False)
     clip.close()
 
