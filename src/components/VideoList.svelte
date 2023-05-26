@@ -21,7 +21,7 @@
                 {#if item['url-1080-SDR'] != null}<a class="btn btn-sm variant-filled-secondary" href="{item['url-1080-SDR']}">1080p SDR</a>{/if}
                 {#if item['url-1080-HDR'] != null}<a class="btn btn-sm variant-filled-secondary" href="{item['url-1080-HDR']}">1080p Dolby Vision</a>{/if}
                 {#if item['url-4K-SDR'] != null}<a class="btn btn-sm variant-filled-secondary" href="{item['url-4K-SDR']}">4K SDR</a>{/if}
-                {#if item['url-4K-HDR'] != null}<a class="btn btn-sm variant-filled-secondary" href="{item['url-4K-SDR']}">4K Dolby Vision</a>{/if}
+                {#if item['url-4K-HDR'] != null}<a class="btn btn-sm variant-filled-secondary" href="{item['url-4K-HDR']}">4K Dolby Vision</a>{/if}
                 {#if item['url-1080-H264'] != null}<br /><a class="btn btn-sm variant-soft-secondary" href="{item['url-1080-H264']}">1080p H.264</a>{/if}
             </div>
         </div>
