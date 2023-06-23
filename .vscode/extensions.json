@@ -1,0 +1,12 @@
+{
+	"recommendations": [
+        "dbaeumer.vscode-eslint",
+		"steoates.autoimport",
+		"formulahendry.auto-rename-tag",
+		"anseki.vscode-color",
+        "bradlc.vscode-tailwindcss",
+		"vincaslt.highlight-matching-tag",
+		"esbenp.prettier-vscode",
+		"svelte.svelte-vscode",
+	]
+}
