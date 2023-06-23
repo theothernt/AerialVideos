@@ -5,8 +5,9 @@
 This project generates a simple website which lists all the videos from Apple, Jetson Creative, and Robin Fourcade.
 
 You can then download the videos you like for use in the screensaver of your choice, for example...
-* [Aerial Views for Android TV 📺](https://github.com/theothernt/AerialViews)
-* [Aerial for macOS 🖥️](https://github.com/JohnCoates/Aerial)
+
+- [Aerial Views for Android TV 📺](https://github.com/theothernt/AerialViews)
+- [Aerial for macOS 🖥️](https://github.com/JohnCoates/Aerial)
 
 This website is built and deployed using Netlify and can be viewed at [https://aerial-videos.netlify.app/](https://aerial-videos.netlify.app/)
 
@@ -51,6 +52,7 @@ python3 thumbnails.py
 This will take a few minutes to complete depending on the speed of your Mac/PC and internet connection.
 
 When finished, you should have a folder called `static/thumbnails` full of images.
+
 </details>
 
 <details>

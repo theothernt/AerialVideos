@@ -5,13 +5,12 @@
 	import VideoList from '$components/VideoList.svelte';
 
 	let list: Provider[] = [];
-	    
-	list.push({videos: apple.assets, title: "Apple's tvOS 15 videos", anchor: "apple"})
-	list.push({videos: comm1.assets, title: "Videos by Jetson Creative", anchor: "jetson-creative"})
-	list.push({videos: comm2.assets, title: "Videos by Robin Fourcade", anchor: "robin-fourcade"})
 
+	list.push({ videos: apple.assets, title: "Apple's tvOS 15 videos", anchor: 'apple' });
+	list.push({ videos: comm1.assets, title: 'Videos by Jetson Creative', anchor: 'jetson-creative' });
+	list.push({ videos: comm2.assets, title: 'Videos by Robin Fourcade', anchor: 'robin-fourcade' });
 </script>
 
-{#each list as {videos, title, anchor}}
-	<VideoList videos="{videos}" title="{title}" anchor="{anchor}" />
+{#each list as { videos, title, anchor }}
+	<VideoList {videos} {title} {anchor} />
 {/each}
