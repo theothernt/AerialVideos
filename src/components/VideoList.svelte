@@ -10,8 +10,9 @@
 	<h1 class="mb-5 text-left" id={anchor}>{title}</h1>
 	<div class="flex flex-wrap">
 		{#each videos as video, index}
-			<div class="card variant-soft w-80 overflow-hidden rounded-lg mr-5 mb-5">
-				<header>
+			<div class="card card-hover variant-soft w-80 overflow-hidden rounded-lg mr-5 mb-5">
+				<header class="relative">
+					<span class="badge absolute variant-filled-secondary top-2 left-2 z-10">{index + 1}</span>
 					<Lazy height={180}>
 						<img
 							width="320"
@@ -23,7 +24,7 @@
 					</Lazy>
 				</header>
 				<div class="p-4 space-y-4">
-					<h5>{index + 1}. {video.accessibilityLabel}</h5>
+					<h5>{video.accessibilityLabel}</h5>
 					{#if video['url-1080-SDR'] != null}<a class="btn btn-sm variant-filled-secondary" href={video['url-1080-SDR']}
 							>1080p SDR</a
 						>{/if}
