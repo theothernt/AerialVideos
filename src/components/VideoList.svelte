@@ -7,7 +7,7 @@
 </script>
 
 <div class="p-10 w-full mx-auto">
-	<h1 class="mb-5 text-left" id={anchor}>{title}</h1>
+	<h1 class="mb-5 text-left h1" id={anchor}>{title}</h1>
 	<div class="flex flex-wrap">
 		{#each videos as video, index}
 			<div class="card card-hover variant-soft w-80 overflow-hidden rounded-lg mr-5 mb-5">
@@ -24,7 +24,7 @@
 					</Lazy>
 				</header>
 				<div class="p-4 space-y-4">
-					<h5>{video.accessibilityLabel}</h5>
+					<h5 class="h5">{video.accessibilityLabel}</h5>
 					{#if video['url-1080-SDR'] != null}<a class="btn btn-sm variant-filled" href={video['url-1080-SDR']}
 							>1080p SDR</a
 						>{/if}
