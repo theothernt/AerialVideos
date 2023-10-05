@@ -6,11 +6,11 @@
 
 	let list: Provider[] = [];
 
-	list.push({ videos: apple.assets, title: "Apple's tvOS 15 videos", anchor: 'apple' });
-	list.push({ videos: comm1.assets, title: 'Videos by Jetson Creative', anchor: 'jetson-creative' });
-	list.push({ videos: comm2.assets, title: 'Videos by Robin Fourcade', anchor: 'robin-fourcade' });
+	list.push({ videos: apple.assets, title: "Apple's tvOS 15 videos", message: "If you receive an SSL cert error, accept the error once, then navigate back to this page in your browser and continue with your downloads...", anchor: 'apple' });
+	list.push({ videos: comm1.assets, title: 'Videos by Jetson Creative', message: "", anchor: 'jetson-creative' });
+	list.push({ videos: comm2.assets, title: 'Videos by Robin Fourcade', message: "", anchor: 'robin-fourcade' });
 </script>
 
-{#each list as { videos, title, anchor }}
-	<VideoList {videos} {title} {anchor} />
+{#each list as { videos, title, message, anchor }}
+	<VideoList {videos} {title} {message} {anchor} />
 {/each}
