@@ -6,7 +6,11 @@
 
 	let list: Provider[] = [];
 
-	list.push({ videos: apple.assets, title: "Apple's tvOS 15 videos", message: "If you receive an SSL cert error, accept the error once, then navigate back to this page in your browser and continue with your downloads...", anchor: 'apple' });
+	let sslErrorMessage: string = `If you receive an SSL cert error...<br />
+	1) Load this webpage in an Incognito window and the error won't occur or<br />
+	2) Accept the error once, then navigate back to this page in your browser and continue with your downloads`
+
+	list.push({ videos: apple.assets, title: "Apple's tvOS 15 videos", message: sslErrorMessage, anchor: 'apple' });
 	list.push({ videos: comm1.assets, title: 'Videos by Jetson Creative', message: "", anchor: 'jetson-creative' });
 	list.push({ videos: comm2.assets, title: 'Videos by Robin Fourcade', message: "", anchor: 'robin-fourcade' });
 </script>
