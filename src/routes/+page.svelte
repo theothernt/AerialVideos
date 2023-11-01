@@ -14,11 +14,11 @@
 	<li>
 		2. Accept the error once, then navigate back to this page in your browser and continue with your downloads
 	</li>
-	</ul>`
+	</ul>`;
 
 	list.push({ videos: apple.assets, title: "Apple's tvOS 15 videos", message: sslErrorMessage, anchor: 'apple' });
-	list.push({ videos: comm1.assets, title: 'Videos by Jetson Creative', message: "", anchor: 'jetson-creative' });
-	list.push({ videos: comm2.assets, title: 'Videos by Robin Fourcade', message: "", anchor: 'robin-fourcade' });
+	list.push({ videos: comm1.assets, title: 'Videos by Jetson Creative', message: '', anchor: 'jetson-creative' });
+	list.push({ videos: comm2.assets, title: 'Videos by Robin Fourcade', message: '', anchor: 'robin-fourcade' });
 </script>
 
 {#each list as { videos, title, message, anchor }}

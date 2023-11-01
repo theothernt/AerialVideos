@@ -17,7 +17,7 @@
 			<div class="card card-hover variant-soft w-80 overflow-hidden rounded-lg mr-5 mb-5">
 				<header class="relative">
 					<span class="badge absolute variant-filled-primary top-2 left-2 z-10">{index + 1}</span>
-					<Lazy height={180}>
+					<Lazy height={180} fadeOption={{delay: 0, duration: 500}}>
 						<img
 							width="320"
 							height="180"
