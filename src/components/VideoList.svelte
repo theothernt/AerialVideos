@@ -10,7 +10,7 @@
 <div class="p-10 w-full mx-auto">
 	<h1 class="mb-5 text-left h1" id={anchor}>{title}</h1>
 	{#if message}
-		<p class="pb-5">{@html message}</p>	
+		<div class="card variant-ghost-warning p-4 mb-5 w-3/4">{@html message}</div>
 	{/if}
 	<div class="flex flex-wrap">
 		{#each videos as video, index}
