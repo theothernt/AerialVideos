@@ -17,24 +17,24 @@
 	export let anchor: string;
 
 	const videoFormats = [
-		{ key: 'url-1080-SDR', label: '1080p SDR', class: 'variant-filled' },
-		{ key: 'url-1080-HDR', label: '1080p Dolby Vision', class: 'variant-filled' },
-		{ key: 'url-4K-SDR', label: '4K SDR', class: 'variant-filled' },
-		{ key: 'url-4K-HDR', label: '4K Dolby Vision', class: 'variant-filled' },
-		{ key: 'url-1080-H264', label: '1080p H.264', class: 'variant-filled-surface', addBreak: true }
+		{ key: 'url-1080-SDR', label: '1080p SDR', class: 'preset-filled' },
+		{ key: 'url-1080-HDR', label: '1080p Dolby Vision', class: 'preset-filled' },
+		{ key: 'url-4K-SDR', label: '4K SDR', class: 'preset-filled' },
+		{ key: 'url-4K-HDR', label: '4K Dolby Vision', class: 'preset-filled' },
+		{ key: 'url-1080-H264', label: '1080p H.264', class: 'preset-filled-surface-500', addBreak: true }
 	];
 </script>
 
 <div class="p-10 w-full mx-auto">
 	<h1 class="mb-5 text-left h1" id={anchor}>{title}</h1>
 	{#if message}
-		<div class="card variant-ghost-warning p-4 mb-5 w-3/4">{@html message}</div>
+		<div class="card preset-tonal-warning border border-warning-500 p-4 mb-5 w-3/4">{@html message}</div>
 	{/if}
 	<div class="flex flex-wrap">
 		{#each videos as video, index}
-			<div class="card card-hover variant-soft w-80 overflow-hidden rounded-lg mr-5 mb-5">
+			<div class="card card-hover preset-tonal w-80 overflow-hidden rounded-lg mr-5 mb-5">
 				<header class="relative">
-					<span class="badge absolute variant-filled-primary top-2 left-2 z-10">{index + 1}</span>
+					<span class="badge absolute preset-filled-primary-500 top-2 left-2 z-10">{index + 1}</span>
 					<Lazy height={180} fadeOption={{ delay: 0, duration: 500 }}>
 						<img
 							width="320"
