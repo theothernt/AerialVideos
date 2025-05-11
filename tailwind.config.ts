@@ -13,7 +13,7 @@ export default {
 		extend: {}
 	},
 	plugins: [
-		typography,
+		typography(),
 		skeleton({
 			themes: {
 				preset: [
