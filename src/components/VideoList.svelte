@@ -1,10 +1,28 @@
 <script lang="ts">
 	import Lazy from 'svelte-lazy';
 
-	export let videos: any;
+	interface Video {
+		id: string;
+		accessibilityLabel: string;
+		'url-1080-SDR'?: string;
+		'url-1080-HDR'?: string;
+		'url-4K-SDR'?: string;
+		'url-4K-HDR'?: string;
+		'url-1080-H264'?: string;
+	}
+
+	export let videos: Video[];
 	export let title: string;
 	export let message: string;
 	export let anchor: string;
+
+	const videoFormats = [
+		{ key: 'url-1080-SDR', label: '1080p SDR', class: 'variant-filled' },
+		{ key: 'url-1080-HDR', label: '1080p Dolby Vision', class: 'variant-filled' },
+		{ key: 'url-4K-SDR', label: '4K SDR', class: 'variant-filled' },
+		{ key: 'url-4K-HDR', label: '4K Dolby Vision', class: 'variant-filled' },
+		{ key: 'url-1080-H264', label: '1080p H.264', class: 'variant-filled-surface', addBreak: true }
+	];
 </script>
 
 <div class="p-10 w-full mx-auto">
@@ -29,21 +47,12 @@
 				</header>
 				<div class="p-4 space-y-4">
 					<h5 class="h5">{video.accessibilityLabel}</h5>
-					{#if video['url-1080-SDR'] != null}<a class="btn btn-sm variant-filled" href={video['url-1080-SDR']}
-							>1080p SDR</a
-						>{/if}
-					{#if video['url-1080-HDR'] != null}<a class="btn btn-sm variant-filled" href={video['url-1080-HDR']}
-							>1080p Dolby Vision</a
-						>{/if}
-					{#if video['url-4K-SDR'] != null}<a class="btn btn-sm variant-filled" href={video['url-4K-SDR']}>4K SDR</a
-						>{/if}
-					{#if video['url-4K-HDR'] != null}<a class="btn btn-sm variant-filled" href={video['url-4K-HDR']}
-							>4K Dolby Vision</a
-						>{/if}
-					{#if video['url-1080-H264'] != null}<br /><a
-							class="btn btn-sm variant-filled-surface"
-							href={video['url-1080-H264']}>1080p H.264</a
-						>{/if}
+					{#each videoFormats as format}
+						{#if video[format.key]}
+							{#if format.addBreak}<br />{/if}
+							<a class="btn btn-sm {format.class}" href={video[format.key]}>{format.label}</a>
+						{/if}
+					{/each}
 				</div>
 			</div>
 		{/each}
