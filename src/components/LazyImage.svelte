@@ -4,8 +4,8 @@
 
 	export let src: string;
 	export let alt: string = '';
-	export let width: string | number = 'auto';
-	export let height: string | number = 'auto';
+	export let width: string | number = 16;
+	export let height: string | number = 9;
 	export let className: string = '';
 	export let placeholderClassName: string = 'bg-black/50';
 	export let fadeDelay: number = 0;
@@ -43,15 +43,13 @@
 	`;
 </script>
 
-<div class="{placeholderClassName} {className}" bind:this={element} style="width: {typeof width === 'number' ? width + 'px' : width}; height: {typeof height === 'number' ? height + 'px' : height};">
+<div class="{placeholderClassName} {className} w-full" bind:this={element} style="aspect-ratio: {width}/{height};">
 	{#if visible}
 		<img 
 			{src}
 			{alt}
-			width={typeof width === 'number' ? width : undefined}
-			height={typeof height === 'number' ? height : undefined}
 			style={imgStyle}
-			class="w-full"
+			class="w-full h-full object-cover"
 			on:load={onImageLoad}
 		/>
 	{/if}
