@@ -1,4 +1,5 @@
 <script lang="ts">
+	import LazyImage from './LazyImage.svelte';
 	import { type Video } from '../lib/types';
 	
 	export let videos: Video[];
@@ -22,14 +23,16 @@
 	{/if}
 	<div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-5">
 		{#each videos as video, index}
-			<div class="card card-hover preset-tonal overflow-hidden rounded-lg">
-				<header class="relative">
+			<div class="card card-hover preset-tonal overflow-hidden rounded-lg">				<header class="relative">
 					<span class="badge absolute preset-filled-primary-500 top-2 left-2 z-10">{index + 1}</span>
-					<img
-						width="320"
-						height="180"
+					<LazyImage
+						width={320}
+						height={180}
 						src="thumbnails/{video.id}.webp"
-						class="bg-black/50 w-full"
+						className="w-full"
+						placeholderClassName="bg-black/50"
+						fadeDelay={0}
+						fadeDuration={500}
 						alt={video.accessibilityLabel}
 					/>
 				</header>
