@@ -3,6 +3,7 @@
 	import comm1 from '$lib/comm1.json';
 	import comm2 from '$lib/comm2.json';
 	import VideoList from '$components/VideoList.svelte';
+	import { type Provider } from '$lib/types';
 
 	let list: Provider[] = [];
 

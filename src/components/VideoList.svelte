@@ -1,15 +1,6 @@
 <script lang="ts">
+	import { type Video } from '../lib/types';
 	
-	interface Video {
-		id: string;
-		accessibilityLabel: string;
-		'url-1080-SDR'?: string;
-		'url-1080-HDR'?: string;
-		'url-4K-SDR'?: string;
-		'url-4K-HDR'?: string;
-		'url-1080-H264'?: string;
-	}
-
 	export let videos: Video[];
 	export let title: string;
 	export let message: string;
@@ -29,9 +20,9 @@
 	{#if message}
 		<div class="card preset-tonal-warning border border-warning-500 p-4 mb-5 w-3/4">{@html message}</div>
 	{/if}
-	<div class="flex flex-wrap">
+	<div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-5">
 		{#each videos as video, index}
-			<div class="card card-hover preset-tonal w-80 overflow-hidden rounded-lg mr-5 mb-5">
+			<div class="card card-hover preset-tonal overflow-hidden rounded-lg">
 				<header class="relative">
 					<span class="badge absolute preset-filled-primary-500 top-2 left-2 z-10">{index + 1}</span>
 					<img
