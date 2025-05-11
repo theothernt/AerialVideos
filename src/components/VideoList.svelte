@@ -1,6 +1,5 @@
 <script lang="ts">
-	import Lazy from 'svelte-lazy';
-
+	
 	interface Video {
 		id: string;
 		accessibilityLabel: string;
@@ -35,22 +34,20 @@
 			<div class="card card-hover preset-tonal w-80 overflow-hidden rounded-lg mr-5 mb-5">
 				<header class="relative">
 					<span class="badge absolute preset-filled-primary-500 top-2 left-2 z-10">{index + 1}</span>
-					<Lazy height={180} fadeOption={{ delay: 0, duration: 500 }}>
-						<img
-							width="320"
-							height="180"
-							src="thumbnails/{video.id}.webp"
-							class="bg-black/50 w-full"
-							alt={video.accessibilityLabel}
-						/>
-					</Lazy>
+					<img
+						width="320"
+						height="180"
+						src="thumbnails/{video.id}.webp"
+						class="bg-black/50 w-full"
+						alt={video.accessibilityLabel}
+					/>
 				</header>
 				<div class="p-4 space-y-4">
 					<h5 class="h5">{video.accessibilityLabel}</h5>
 					{#each videoFormats as format}
-						{#if video[format.key]}
+						{#if video[format.key as keyof Video]}
 							{#if format.addBreak}<br />{/if}
-							<a class="btn btn-sm {format.class}" href={video[format.key]}>{format.label}</a>
+							<a class="btn btn-sm {format.class}" href={video[format.key as keyof Video]}>{format.label}</a>
 						{/if}
 					{/each}
 				</div>
