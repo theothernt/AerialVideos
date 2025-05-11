@@ -12,8 +12,8 @@ importers:
         specifier: ^2.11.0
         version: 2.11.0(svelte@4.2.19)
       '@skeletonlabs/tw-plugin':
-        specifier: ^0.1.0
-        version: 0.1.0(tailwindcss@4.1.6)
+        specifier: ^0.4.1
+        version: 0.4.1(tailwindcss@4.1.6)
       '@sveltejs/adapter-static':
         specifier: ^3.0.8
         version: 3.0.8(@sveltejs/kit@2.20.8(@sveltejs/vite-plugin-svelte@3.1.2(svelte@4.2.19)(vite@5.4.19(@types/node@20.17.46)(lightningcss@1.29.2)))(svelte@4.2.19)(vite@5.4.19(@types/node@20.17.46)(lightningcss@1.29.2)))
@@ -430,8 +430,8 @@ packages:
     peerDependencies:
       svelte: ^3.56.0 || ^4.0.0 || ^5.0.0
 
-  '@skeletonlabs/tw-plugin@0.1.0':
-    resolution: {integrity: sha512-ufnm4FS+s/khuho4yJ/uqfW91u2YXnH3E5N541MtX9XjmoimQzYIcxWyTIuX9AM/brIPP6M6l0et3nRx17CRoQ==}
+  '@skeletonlabs/tw-plugin@0.4.1':
+    resolution: {integrity: sha512-crrC8BGKis0GNTp7V2HF6mk1ECLUvAxgTTV26LMgt/rV3U6Xd7N7dL5qIL8fE4MTHvpKa1SBsdqsnMbEvATeEg==}
     peerDependencies:
       tailwindcss: '>=3.0.0'
 
@@ -1996,7 +1996,7 @@ snapshots:
       esm-env: 1.0.0
       svelte: 4.2.19
 
-  '@skeletonlabs/tw-plugin@0.1.0(tailwindcss@4.1.6)':
+  '@skeletonlabs/tw-plugin@0.4.1(tailwindcss@4.1.6)':
     dependencies:
       tailwindcss: 4.1.6
 
