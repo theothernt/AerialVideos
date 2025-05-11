@@ -3,6 +3,5 @@
 	import '../app.css';
 </script>
 
-<AppShell>
-	<slot />
-</AppShell>
+<slot />
+
