@@ -2,6 +2,7 @@
 	import apple from '$lib/tvos15.json';
 	import comm1 from '$lib/comm1.json';
 	import comm2 from '$lib/comm2.json';
+	import fireos8 from '$lib/fireos8.json';
 	import VideoList from '$components/VideoList.svelte';
 	import { type Provider } from '$lib/types';
 
@@ -20,6 +21,7 @@
 	list.push({ videos: apple.assets, title: "Apple's tvOS 15 videos", message: sslErrorMessage, anchor: 'apple' });
 	list.push({ videos: comm1.assets, title: 'Videos by Jetson Creative', message: '', anchor: 'jetson-creative' });
 	list.push({ videos: comm2.assets, title: 'Videos by Robin Fourcade', message: '', anchor: 'robin-fourcade' });
+	list.push({ videos: fireos8.assets, title: 'Ambient Experience videos', message: '', anchor: 'fireos-8' });
 </script>
 
 {#each list as { videos, title, message, anchor }}
