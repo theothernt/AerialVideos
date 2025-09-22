@@ -1,5 +1,4 @@
 from moviepy.video.io.VideoFileClip import VideoFileClip
-from moviepy.video.fx.resize import resize
 from joblib import Parallel, delayed
 import json
 import glob
@@ -13,13 +12,15 @@ def generate_thumbnails(filename):
         videos = json.load(f)['assets']
 
     threads = os.cpu_count()
+    # threads = 4
     print("Using " + str(threads) + " threads...")
     
     Parallel(n_jobs=threads)(delayed(render_image)(video) for video in  videos)
     
 def render_image(video):
-    clip = VideoFileClip(video['url-1080-H264'])
-    clip.fx(resize, width=320).save_frame(f"{THUMBNAILS_PATH}/{video['id']}.webp", t=5)
+    clip = VideoFileClip(video['url-1080-SDR'])
+    resized_clip = clip.resized(width=320)
+    resized_clip.save_frame(f"{THUMBNAILS_PATH}/{video['id']}.webp", t=5)
     clip.close()
     print("Thumbnail created for: " + video['accessibilityLabel'])
 
@@ -34,3 +35,4 @@ else:
 generate_thumbnails(f"{JSON_PATH}/tvos15.json")
 generate_thumbnails(f"{JSON_PATH}/comm1.json")
 generate_thumbnails(f"{JSON_PATH}/comm2.json")
+generate_thumbnails(f"{JSON_PATH}/fireos8.json")
