@@ -40,6 +40,10 @@ There are many ways to do this but I use [Homebrew](https://brew.sh/), a package
 brew install ffmpeg
 ```
 
+If you have used Homebrew to also install Python 3, use [pipx](https://pipx.pypa.io/stable/) to install python packages as a virtual environment is used to keep the Apple provided version of Python separate from the Homebrew version.
+
+When all required dependencies are installed, use the `generate_thumbnails.sh` script.
+
 ### Run the script
 
 Run the Python script to generate the thumbnails...
