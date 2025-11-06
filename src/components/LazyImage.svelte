@@ -2,20 +2,33 @@
 	// LazyImage.svelte - A simple lazy loading image component for Svelte 5
 	import { onMount } from 'svelte';
 
-	export let src: string;
-	export let alt: string = '';
-	export let width: string | number = 16;
-	export let height: string | number = 9;
-	export let className: string = '';
-	export let placeholderClassName: string = 'bg-black/50';
-	export let fadeDelay: number = 0;
-	export let fadeDuration: number = 500;
+	let {
+		src,
+		alt = '',
+		width = 16,
+		height = 9,
+		className = '',
+		placeholderClassName = 'bg-black/50',
+		fadeDelay = 0,
+		fadeDuration = 500
+	}: {
+		src: string;
+		alt?: string;
+		width?: string | number;
+		height?: string | number;
+		className?: string;
+		placeholderClassName?: string;
+		fadeDelay?: number;
+		fadeDuration?: number;
+	} = $props();
 
-	let loaded = false;
-	let visible = false;
-	let element: HTMLElement;
+	let loaded = $state(false);
+	let visible = $state(false);
+	let element = $state<HTMLElement>();
 
 	onMount(() => {
+		if (!element) return;
+		
 		const observer = new IntersectionObserver(
 			(entries) => {
 				if (entries[0].isIntersecting) {
@@ -37,10 +50,10 @@
 		loaded = true;
 	}
 
-	$: imgStyle = `
+	let imgStyle = $derived(`
 		transition: opacity ${fadeDuration}ms ${fadeDelay}ms;
 		opacity: ${loaded ? 1 : 0};
-	`;
+	`);
 </script>
 
 <div class="{placeholderClassName} {className} w-full" bind:this={element} style="aspect-ratio: {width}/{height};">
@@ -50,7 +63,7 @@
 			{alt}
 			style={imgStyle}
 			class="w-full h-full object-cover"
-			on:load={onImageLoad}
+			onload={onImageLoad}
 		/>
 	{/if}
 </div>
