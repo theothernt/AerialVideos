@@ -24,6 +24,6 @@
 	list.push({ videos: fireos8.assets, title: 'Ambient Experience videos', message: '', anchor: 'fireos-8' });
 </script>
 
-{#each list as { videos, title, message, anchor }}
+{#each list as { videos, title, message, anchor } (anchor)}
 	<VideoList {videos} {title} {message} {anchor} />
 {/each}

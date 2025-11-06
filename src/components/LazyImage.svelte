@@ -24,7 +24,7 @@
 
 	let loaded = $state(false);
 	let visible = $state(false);
-	let element = $state<HTMLElement>();
+	let element: HTMLElement;
 
 	onMount(() => {
 		if (!element) return;
