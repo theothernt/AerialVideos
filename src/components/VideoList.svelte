@@ -2,10 +2,12 @@
 	import LazyImage from './LazyImage.svelte';
 	import { type Video } from '../lib/types';
 	
-	export let videos: Video[];
-	export let title: string;
-	export let message: string;
-	export let anchor: string;
+	let { videos, title, message, anchor }: {
+		videos: Video[];
+		title: string;
+		message: string;
+		anchor: string;
+	} = $props();
 
 	const videoFormats = [
 		{ key: 'url-1080-SDR', label: '1080p SDR', class: 'preset-filled' },
@@ -22,7 +24,7 @@
 		<div class="card preset-tonal-warning border border-warning-500 p-4 mb-5 w-3/4">{@html message}</div>
 	{/if}
 	<div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-5">
-		{#each videos as video, index}
+		{#each videos as video, index (`${index}-${video.id}`)}
 			<div class="card card-hover preset-filled-surface-100-900 overflow-hidden rounded-lg">						
 				<header class="relative">
 					<span class="badge absolute preset-filled-primary-500 top-2 left-2 z-10">{index + 1}</span>
@@ -39,7 +41,7 @@
 				</header>
 				<div class="p-4 space-y-4">
 					<h5 class="h5">{video.accessibilityLabel}</h5>
-					{#each videoFormats as format}
+					{#each videoFormats as format (format.key)}
 						{#if video[format.key as keyof Video]}
 							{#if format.addBreak}<br />{/if}
 							<a class="btn btn-sm {format.class}" href={video[format.key as keyof Video]}>{format.label}</a>
