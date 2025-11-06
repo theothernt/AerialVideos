@@ -28,7 +28,7 @@
 
 	onMount(() => {
 		if (!element) return;
-		
+
 		const observer = new IntersectionObserver(
 			(entries) => {
 				if (entries[0].isIntersecting) {
@@ -58,12 +58,6 @@
 
 <div class="{placeholderClassName} {className} w-full" bind:this={element} style="aspect-ratio: {width}/{height};">
 	{#if visible}
-		<img 
-			{src}
-			{alt}
-			style={imgStyle}
-			class="w-full h-full object-cover"
-			onload={onImageLoad}
-		/>
+		<img {src} {alt} style={imgStyle} class="w-full h-full object-cover" onload={onImageLoad} />
 	{/if}
 </div>

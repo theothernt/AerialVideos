@@ -1,8 +1,13 @@
 <script lang="ts">
 	import LazyImage from './LazyImage.svelte';
 	import { type Video } from '../lib/types';
-	
-	let { videos, title, message, anchor }: {
+
+	let {
+		videos,
+		title,
+		message,
+		anchor
+	}: {
 		videos: Video[];
 		title: string;
 		message: string;
@@ -25,7 +30,7 @@
 	{/if}
 	<div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-5">
 		{#each videos as video, index (`${index}-${video.id}`)}
-			<div class="card card-hover preset-filled-surface-100-900 overflow-hidden rounded-lg">						
+			<div class="card card-hover preset-filled-surface-100-900 overflow-hidden rounded-lg">
 				<header class="relative">
 					<span class="badge absolute preset-filled-primary-500 top-2 left-2 z-10">{index + 1}</span>
 					<LazyImage
