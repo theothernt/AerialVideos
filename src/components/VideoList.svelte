@@ -2,17 +2,14 @@
 	import LazyImage from './LazyImage.svelte';
 	import { type Video } from '../lib/types';
 
-	let {
-		videos,
-		title,
-		message,
-		anchor
-	}: {
+	interface Props {
 		videos: Video[];
 		title: string;
 		message: string;
 		anchor: string;
-	} = $props();
+	}
+
+	let { videos, title, message, anchor }: Props = $props();
 
 	const videoFormats = [
 		{ key: 'url-1080-SDR', label: '1080p SDR', class: 'preset-filled' },
@@ -26,10 +23,11 @@
 <div class="p-10 w-full mx-auto">
 	<h1 class="mb-5 text-left h1" id={anchor}>{title}</h1>
 	{#if message}
+		<!-- eslint-disable-next-line svelte/no-at-html-tags -- Content is controlled, not user-generated -->
 		<div class="card preset-tonal-warning border border-warning-500 p-4 mb-5 w-3/4">{@html message}</div>
 	{/if}
 	<div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-5">
-		{#each videos as video, index (`${index}-${video.id}`)}
+		{#each videos as video, index (video.id)}
 			<div class="card card-hover preset-filled-surface-100-900 overflow-hidden rounded-lg">
 				<header class="relative">
 					<span class="badge absolute preset-filled-primary-500 top-2 left-2 z-10">{index + 1}</span>
@@ -37,8 +35,8 @@
 						width={16}
 						height={9}
 						src="thumbnails/{video.id}.webp"
-						className="w-full"
-						placeholderClassName="bg-black/50"
+						class="w-full"
+						placeholderClass="bg-black/50"
 						fadeDelay={0}
 						fadeDuration={500}
 						alt={video.accessibilityLabel}

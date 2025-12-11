@@ -6,9 +6,7 @@
 	import VideoList from '$components/VideoList.svelte';
 	import { type Provider } from '$lib/types';
 
-	let list: Provider[] = [];
-
-	let sslErrorMessage: string = `If you receive an SSL cert error, there are a couple of options...
+	const sslErrorMessage = `If you receive an SSL cert error, there are a couple of options...
 	<ul class="list-dl pt-2 pl-2">
 	<li>
 		1. Load this webpage in an Incognito window and the error won't occur
@@ -18,10 +16,12 @@
 	</li>
 	</ul>`;
 
-	list.push({ videos: apple.assets, title: "Apple's tvOS 15 videos", message: sslErrorMessage, anchor: 'apple' });
-	list.push({ videos: comm1.assets, title: 'Videos by Jetson Creative', message: '', anchor: 'jetson-creative' });
-	list.push({ videos: comm2.assets, title: 'Videos by Robin Fourcade', message: '', anchor: 'robin-fourcade' });
-	list.push({ videos: fireos8.assets, title: 'Ambient Experience videos', message: '', anchor: 'fireos-8' });
+	const list: Provider[] = [
+		{ videos: apple.assets, title: "Apple's tvOS 15 videos", message: sslErrorMessage, anchor: 'apple' },
+		{ videos: comm1.assets, title: 'Videos by Jetson Creative', message: '', anchor: 'jetson-creative' },
+		{ videos: comm2.assets, title: 'Videos by Robin Fourcade', message: '', anchor: 'robin-fourcade' },
+		{ videos: fireos8.assets, title: 'Ambient Experience videos', message: '', anchor: 'fireos-8' }
+	];
 </script>
 
 {#each list as { videos, title, message, anchor } (anchor)}
