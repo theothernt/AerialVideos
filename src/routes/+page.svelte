@@ -20,7 +20,7 @@
 		{ videos: apple.assets, title: "Apple's tvOS 15 videos", message: sslErrorMessage, anchor: 'apple' },
 		{ videos: comm1.assets, title: 'Videos by Jetson Creative', message: '', anchor: 'jetson-creative' },
 		{ videos: comm2.assets, title: 'Videos by Robin Fourcade', message: '', anchor: 'robin-fourcade' },
-		{ videos: fireos8.assets, title: 'Ambient Experience videos', message: '', anchor: 'fireos-8' }
+		{ videos: fireos8.assets, title: 'Amazon Fire OS ambient videos', message: '', anchor: 'fireos-8' }
 	];
 </script>
 
