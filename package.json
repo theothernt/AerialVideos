@@ -37,6 +37,9 @@
 	},
 	"type": "module",
 	"pnpm": {
+		 "overrides": {
+        "cookie": "^0.7.0"
+    },
 		"onlyBuiltDependencies": [
 			"@sveltejs/kit",
 			"@tailwindcss/oxide",
