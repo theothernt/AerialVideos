@@ -1,5 +1,5 @@
 <script lang="ts">
-	import apple from '$lib/tvos15.json';
+	import apple from '$lib/tvos26.json';
 	import comm1 from '$lib/comm1.json';
 	import comm2 from '$lib/comm2.json';
 	import fireos8 from '$lib/fireos8.json';
@@ -17,7 +17,7 @@
 	</ul>`;
 
 	const list: Provider[] = [
-		{ videos: apple.assets, title: "Apple's tvOS 15 videos", message: sslErrorMessage, anchor: 'apple' },
+		{ videos: apple.assets, title: "Apple's tvOS 26 videos", message: sslErrorMessage, anchor: 'apple' },
 		{ videos: comm1.assets, title: 'Videos by Jetson Creative', message: '', anchor: 'jetson-creative' },
 		{ videos: comm2.assets, title: 'Videos by Robin Fourcade', message: '', anchor: 'robin-fourcade' },
 		{ videos: fireos8.assets, title: 'Amazon Fire OS ambient videos', message: '', anchor: 'fireos-8' }

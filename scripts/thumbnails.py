@@ -32,7 +32,7 @@ else:
     for f in files:
         os.remove(f)
     
-generate_thumbnails(f"{JSON_PATH}/tvos15.json")
+generate_thumbnails(f"{JSON_PATH}/tvos26.json")
 generate_thumbnails(f"{JSON_PATH}/comm1.json")
 generate_thumbnails(f"{JSON_PATH}/comm2.json")
 generate_thumbnails(f"{JSON_PATH}/fireos8.json")
