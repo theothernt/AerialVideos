@@ -4,3 +4,5 @@ packages:
   - 'packages/**'
   # if required, exclude some directories
   - '!**/test/**'
+allowBuilds:
+  esbuild: true
