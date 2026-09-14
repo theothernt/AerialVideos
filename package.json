@@ -2,7 +2,7 @@
 	"name": "aerial-videos",
 	"version": "1.0.0",
 	"private": true,
-	"packageManager": "pnpm@11.21.0",
+	"packageManager": "pnpm@12.4.1",
 	"scripts": {
 		"preinstall": "npx only-allow pnpm",
 		"dev": "vite dev",
