@@ -1,34 +1,53 @@
-const js = require('@eslint/js');
-const prettier = require('eslint-config-prettier');
-const tseslint = require('@typescript-eslint/eslint-plugin');
-const parser = require('@typescript-eslint/parser');
+import js from '@eslint/js';
+import prettier from 'eslint-config-prettier';
+import svelte from 'eslint-plugin-svelte';
+import globals from 'globals';
+import ts from 'typescript-eslint';
 
-module.exports = [
+export default ts.config(
 	{
-		files: ['**/*.{js,ts}'],
-		extends: [js.configs.recommended, tseslint.configs.recommended, prettier],
-		plugins: {
-			'@typescript-eslint': tseslint,
-		},
-		parser,
-		parserOptions: {
+		ignores: [
+			'.DS_Store',
+			'node_modules',
+			'build',
+			'.svelte-kit',
+			'.kilo',
+			'package',
+			'.env',
+			'.env.*',
+			'!.env.example',
+			'pnpm-lock.yaml',
+			'package-lock.json',
+			'yarn.lock',
+			'*.cjs'
+		]
+	},
+	js.configs.recommended,
+	...ts.configs.recommended,
+	...svelte.configs.recommended,
+	prettier,
+	...svelte.configs.prettier,
+	{
+		languageOptions: {
+			ecmaVersion: 2022,
 			sourceType: 'module',
-			ecmaVersion: 2020,
-		},
-		env: {
-			browser: true,
-			es2017: true,
-			node: true,
-		},
+			globals: {
+				...globals.browser,
+				...globals.node
+			}
+		}
 	},
 	{
 		files: ['**/*.svelte'],
-		processor: 'svelte3/svelte3',
-		settings: {
-			'svelte3/typescript': () => require('typescript'),
-		},
+		languageOptions: {
+			parserOptions: {
+				parser: ts.parser
+			}
+		}
 	},
 	{
-		ignores: ['*.cjs'],
-	},
-];
+		rules: {
+			'svelte/no-navigation-without-resolve': 'off'
+		}
+	}
+);
