@@ -16,7 +16,7 @@
 		{ key: 'url-1080-HDR', label: '1080p Dolby Vision', class: 'preset-filled' },
 		{ key: 'url-4K-SDR', label: '4K SDR', class: 'preset-filled' },
 		{ key: 'url-4K-HDR', label: '4K Dolby Vision', class: 'preset-filled' },
-		{ key: 'url-1080-H264', label: '1080p H.264', class: 'preset-filled-surface-500', addBreak: true }
+		{ key: 'url-1080-H264', label: '1080p H.264', class: 'preset-filled-surface-500' }
 	];
 </script>
 
@@ -42,33 +42,34 @@
 				</header>
 				<div class="p-4 space-y-4">
 					<h3 class="h5">{video.accessibilityLabel}</h3>
-					{#each videoFormats as format (format.key)}
-						{#if video[format.key as keyof Video]}
-							{#if format.addBreak}<br />{/if}
-							<a
-								class="btn btn-sm {format.class}"
-								href={video[format.key as keyof Video]}
-								aria-label="{format.label} — {video.accessibilityLabel}"
-							>
-								<svg
-									class="shrink-0"
-									viewBox="0 0 24 24"
-									fill="none"
-									stroke="currentColor"
-									stroke-width="2"
-									stroke-linecap="round"
-									stroke-linejoin="round"
-									aria-hidden="true"
-									focusable="false"
+					<div class="flex flex-wrap gap-2">
+						{#each videoFormats as format (format.key)}
+							{#if video[format.key as keyof Video]}
+								<a
+									class="btn btn-sm {format.class}"
+									href={video[format.key as keyof Video]}
+									aria-label="{format.label} — {video.accessibilityLabel}"
 								>
-									<path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4" />
-									<polyline points="7 10 12 15 17 10" />
-									<line x1="12" x2="12" y1="15" y2="3" />
-								</svg>
-								{format.label}
-							</a>
-						{/if}
-					{/each}
+									<svg
+										class="shrink-0"
+										viewBox="0 0 24 24"
+										fill="none"
+										stroke="currentColor"
+										stroke-width="2"
+										stroke-linecap="round"
+										stroke-linejoin="round"
+										aria-hidden="true"
+										focusable="false"
+									>
+										<path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4" />
+										<polyline points="7 10 12 15 17 10" />
+										<line x1="12" x2="12" y1="15" y2="3" />
+									</svg>
+									{format.label}
+								</a>
+							{/if}
+						{/each}
+					</div>
 				</div>
 			</div>
 		{/each}

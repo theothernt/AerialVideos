@@ -4,6 +4,27 @@
 
 [[plugins]]
 package = "@netlify/plugin-lighthouse"
-  
+
   [plugins.inputs.settings]
     preset = "desktop"
+
+# Security headers for every response.
+[[headers]]
+  for = "/*"
+  [headers.values]
+    X-Content-Type-Options = "nosniff"
+    X-Frame-Options = "SAMEORIGIN"
+    Referrer-Policy = "strict-origin-when-cross-origin"
+    Permissions-Policy = "camera=(), microphone=(), geolocation=(), payment=()"
+
+# SvelteKit's hashed build output never changes, so it can be cached forever.
+[[headers]]
+  for = "/_app/immutable/*"
+  [headers.values]
+    Cache-Control = "public, max-age=31536000, immutable"
+
+# Thumbnails are stable filenames, so keep the cache window moderate.
+[[headers]]
+  for = "/thumbnails/*"
+  [headers.values]
+    Cache-Control = "public, max-age=604800, stale-while-revalidate=86400"

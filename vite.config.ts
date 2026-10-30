@@ -9,6 +9,8 @@ export default defineConfig({
 		tailwindcss(),
 		sveltekit({
 			preprocess: vitePreprocess(),
+			// Nothing polls for new deployments: the site is static and ships no client runtime.
+			version: { pollInterval: 0 },
 			adapter: adapter({
 				pages: 'build',
 				assets: 'build',

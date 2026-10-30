@@ -7,14 +7,14 @@
 	import { type Provider } from '#lib/types.js';
 
 	const sslErrorMessage = `If you receive an SSL cert error, there are a couple of options...
-	<ul class="list-dl pt-2 pl-2">
+	<ol class="list-decimal pt-2 pl-6">
 	<li>
-		1. Load this webpage in an Incognito window and the error won't occur
+		Load this webpage in an Incognito window and the error won't occur
 	</li>
 	<li>
-		2. Accept the error once, then navigate back to this page in your browser and continue with your downloads
+		Accept the error once, then navigate back to this page in your browser and continue with your downloads
 	</li>
-	</ul>`;
+	</ol>`;
 
 	const list: Provider[] = [
 		{ videos: apple.assets, title: "Apple's tvOS 26 videos", message: sslErrorMessage, anchor: 'apple' },
