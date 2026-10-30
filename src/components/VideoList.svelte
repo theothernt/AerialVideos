@@ -1,6 +1,6 @@
 <script lang="ts">
 	import LazyImage from './LazyImage.svelte';
-	import { type Video } from '../lib/types';
+	import { type Video } from '#lib/types.js';
 
 	interface Props {
 		videos: Video[];

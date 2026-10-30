@@ -1,10 +1,10 @@
 <script lang="ts">
-	import apple from '$lib/tvos26.json';
-	import comm1 from '$lib/comm1.json';
-	import comm2 from '$lib/comm2.json';
-	import fireos8 from '$lib/fireos8.json';
-	import VideoList from '$components/VideoList.svelte';
-	import { type Provider } from '$lib/types';
+	import apple from '#lib/tvos26.json';
+	import comm1 from '#lib/comm1.json';
+	import comm2 from '#lib/comm2.json';
+	import fireos8 from '#lib/fireos8.json';
+	import VideoList from '#components/VideoList.svelte';
+	import { type Provider } from '#lib/types.js';
 
 	const sslErrorMessage = `If you receive an SSL cert error, there are a couple of options...
 	<ul class="list-dl pt-2 pl-2">

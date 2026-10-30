@@ -3,6 +3,10 @@
 	"version": "1.0.0",
 	"private": true,
 	"packageManager": "pnpm@12.4.1",
+	"imports": {
+		"#lib/*": "./src/lib/*",
+		"#components/*": "./src/components/*"
+	},
 	"scripts": {
 		"preinstall": "npx only-allow pnpm",
 		"dev": "vite dev",
@@ -17,10 +21,11 @@
 		"@eslint/js": "^10.0.1",
 		"@skeletonlabs/skeleton": "^5.0.1",
 		"@skeletonlabs/skeleton-svelte": "^5.0.1",
-		"@sveltejs/adapter-static": "^3.0.10",
-		"@sveltejs/kit": "^2.70.3",
+		"@sveltejs/adapter-static": "^4.0.1",
+		"@sveltejs/kit": "^3.1.1",
 		"@sveltejs/vite-plugin-svelte": "^7.3.1",
 		"@tailwindcss/postcss": "^4.3.3",
+		"@tailwindcss/typography": "^0.5.20",
 		"@tailwindcss/vite": "^4.3.3",
 		"@types/node": "^26.6.6",
 		"@typescript-eslint/eslint-plugin": "^8.72.1",
