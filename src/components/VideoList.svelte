@@ -21,7 +21,7 @@
 </script>
 
 <div class="p-10 w-full mx-auto">
-	<h2 class="mb-5 text-left h1" id={anchor}>{title}</h2>
+	<h2 class="mb-5 text-left h3" id={anchor}>{title}</h2>
 	{#if message}
 		<!-- eslint-disable-next-line svelte/no-at-html-tags -- Content is controlled, not user-generated -->
 		<div class="card preset-tonal-warning border border-warning-500 p-4 mb-5 w-3/4">{@html message}</div>

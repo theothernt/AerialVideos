@@ -24,7 +24,19 @@
 	];
 </script>
 
-<h1 class="sr-only">Aerial Videos — free aerial video downloads</h1>
+<header class="sticky top-0 z-50 preset-tonal-surface shadow-sm">
+	<div class="w-full mx-auto px-10 py-5 flex items-center justify-between">
+		<h1 class="h3 m-0">Aerial Videos</h1>
+		<span class="text-sm opacity-70"
+			>For use with Aerial Views on Android TV (<a
+				href="https://play.google.com/store/apps/details?id=com.neilturner.aerialviews"
+				class="link"><strong>Play Store</strong></a
+			>
+			or <a href="https://github.com/theothernt/AerialViews" class="link"><strong>GitHub</strong></a>) and other
+			video-based screensavers.</span
+		>
+	</div>
+</header>
 
 {#each list as { videos, title, message, anchor } (anchor)}
 	<VideoList {videos} {title} {message} {anchor} />
