@@ -18,7 +18,7 @@
 		"@skeletonlabs/skeleton": "^5.0.1",
 		"@skeletonlabs/skeleton-svelte": "^5.0.1",
 		"@sveltejs/adapter-static": "^3.0.10",
-		"@sveltejs/kit": "^2.70.3",
+		"@sveltejs/kit": "^3.0.0",
 		"@sveltejs/vite-plugin-svelte": "^7.3.1",
 		"@tailwindcss/postcss": "^4.3.3",
 		"@tailwindcss/vite": "^4.3.3",
