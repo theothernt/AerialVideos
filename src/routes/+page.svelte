@@ -24,6 +24,8 @@
 	];
 </script>
 
+<h1 class="sr-only">Aerial Videos — free aerial video downloads</h1>
+
 {#each list as { videos, title, message, anchor } (anchor)}
 	<VideoList {videos} {title} {message} {anchor} />
 {/each}

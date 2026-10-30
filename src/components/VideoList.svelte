@@ -21,7 +21,7 @@
 </script>
 
 <div class="p-10 w-full mx-auto">
-	<h1 class="mb-5 text-left h1" id={anchor}>{title}</h1>
+	<h2 class="mb-5 text-left h1" id={anchor}>{title}</h2>
 	{#if message}
 		<!-- eslint-disable-next-line svelte/no-at-html-tags -- Content is controlled, not user-generated -->
 		<div class="card preset-tonal-warning border border-warning-500 p-4 mb-5 w-3/4">{@html message}</div>
@@ -30,18 +30,18 @@
 		{#each videos as video, index (video.id)}
 			<div class="card card-hover preset-filled-surface-100-900 overflow-hidden rounded-lg">
 				<header class="relative">
-					<span class="badge absolute preset-filled-primary-500 top-2 left-2 z-10">{index + 1}</span>
+					<span class="badge absolute preset-filled-primary-500 text-surface-950 top-2 left-2 z-10">{index + 1}</span>
 					<LazyImage
 						width={16}
 						height={9}
 						src="thumbnails/{video.id}.webp"
 						class="w-full"
 						placeholderClass="bg-black/50"
-						alt={video.accessibilityLabel}
+						alt=""
 					/>
 				</header>
 				<div class="p-4 space-y-4">
-					<h5 class="h5">{video.accessibilityLabel}</h5>
+					<h3 class="h5">{video.accessibilityLabel}</h3>
 					{#each videoFormats as format (format.key)}
 						{#if video[format.key as keyof Video]}
 							{#if format.addBreak}<br />{/if}
