@@ -1,5 +1,6 @@
 <script lang="ts">
-	// LazyImage.svelte - A simple lazy loading image component for Svelte 5
+	// LazyImage.svelte - A static, JS-free lazy loading image component for Svelte 5.
+	// Uses the browser's native lazy loading, so it works with `csr = false`.
 
 	interface Props {
 		src: string;
@@ -8,8 +9,6 @@
 		height?: string | number;
 		class?: string;
 		placeholderClass?: string;
-		fadeDelay?: number;
-		fadeDuration?: number;
 	}
 
 	let {
@@ -18,46 +17,10 @@
 		width = 16,
 		height = 9,
 		class: className = '',
-		placeholderClass = 'bg-black/50',
-		fadeDelay = 0,
-		fadeDuration = 500
+		placeholderClass = 'bg-black/50'
 	}: Props = $props();
-
-	let loaded = $state(false);
-	let visible = $state(false);
-
-	function lazyLoad(node: HTMLElement) {
-		const observer = new IntersectionObserver(
-			(entries) => {
-				if (entries[0].isIntersecting) {
-					visible = true;
-					observer.disconnect();
-				}
-			},
-			{ rootMargin: '100px' }
-		);
-
-		observer.observe(node);
-
-		return {
-			destroy() {
-				observer.disconnect();
-			}
-		};
-	}
-
-	function onImageLoad() {
-		loaded = true;
-	}
-
-	let imgStyle = $derived(`
-		transition: opacity ${fadeDuration}ms ${fadeDelay}ms;
-		opacity: ${loaded ? 1 : 0};
-	`);
 </script>
 
-<div class="{placeholderClass} {className} w-full" use:lazyLoad style="aspect-ratio: {width}/{height};">
-	{#if visible}
-		<img {src} {alt} style={imgStyle} class="w-full h-full object-cover" onload={onImageLoad} />
-	{/if}
+<div class="{placeholderClass} {className} w-full" style="aspect-ratio: {width}/{height};">
+	<img {src} {alt} loading="lazy" decoding="async" class="w-full h-full object-cover" />
 </div>

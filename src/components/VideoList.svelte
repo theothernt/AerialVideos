@@ -37,8 +37,6 @@
 						src="thumbnails/{video.id}.webp"
 						class="w-full"
 						placeholderClass="bg-black/50"
-						fadeDelay={0}
-						fadeDuration={500}
 						alt={video.accessibilityLabel}
 					/>
 				</header>
@@ -47,7 +45,11 @@
 					{#each videoFormats as format (format.key)}
 						{#if video[format.key as keyof Video]}
 							{#if format.addBreak}<br />{/if}
-							<a class="btn btn-sm {format.class}" href={video[format.key as keyof Video]}>
+							<a
+								class="btn btn-sm {format.class}"
+								href={video[format.key as keyof Video]}
+								aria-label="{format.label} — {video.accessibilityLabel}"
+							>
 								<svg
 									class="shrink-0"
 									viewBox="0 0 24 24"
